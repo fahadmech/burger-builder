@@ -1,10 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
-import { stat } from "fs";
 
 const initialState = {
   ingredients: null,
   totalPrice: 4,
-  error: false  
+  error: false
 };
 
 const INGREDIENTS_PRICE = {
@@ -41,13 +40,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         ingredients: action.ingredients,
         error: false
-      }
+      };
 
     case actionTypes.FETCH_INGREDIENTS_FAILED:
       return {
         ...state,
         error: true
-      }
+      };
 
     default:
       return state;
